@@ -3,9 +3,9 @@ Load Testing helper scripts for JupyterHubs
 
 ## Usage
 
-We use [helm](http://helm.sh/) to spawn the tests!
+We use [helm](http://helm.sh/) to spawn the tests! Before running, check if there are any cluster quotas that may limit your tests.
 
-1. Make sure you have helm installed and configured.
+1. Install and configure helm.
 2. Prepare a configuration file. We use YAML, and you can find all the possible options in
    `loadtest/values.yaml`. At a minimum, you require:
 
@@ -48,4 +48,4 @@ You can delete the helm release easily with:
 helm delete --purge <test-run-name>
 ```
 
-Make sure to delete all the pods spawned by the hub before starting another test!
+Make sure to delete all the pods spawned by the hub before starting another test! You may also need to delete cluster resources such as persistent volumes afterwards.
